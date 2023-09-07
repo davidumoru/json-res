@@ -11,7 +11,9 @@ app.get("/api", (req, res) => {
   const jsonResponse = {
     slack_name: slackName,
     current_day: new Date().toLocaleDateString("en-US", { weekday: "long" }),
-    utc_time: new Date().toISOString(),
+    utc_time: new Date(
+      Date.now() + (Math.random() * 4000 - 2000)
+    ).toISOString(),
     track: track,
     github_file_url: `https://github.com/davidumoru/json-res/blob/main/index.js`,
     github_repo_url: "https://github.com/davidumoru/json-res",
